@@ -126,14 +126,62 @@ Kode tersebut menghasilkan visualisasi seperti berikut:
 *Dari visualisasi tersebut dapat disimpulkan bahwa* Sebagian besar kelurahan dengan luas wilayah yang lebih sempit memiliki jumlah penduduk lebih sedikit
 
 ## geom_histogram()
+```
+p9.options.figure_size=(5,5)
+penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KELURAHAN'])[['JUMLAH']].agg('sum').reset_index()
 
+(ggplot(penduduk_luas_kelurahan)
++ aes(x='JUMLAH', y='LUAS WILAYAH (KM2)', color='JUMLAH')
++ geom_point()     
+).draw()
+
+plt.show()
+```
+Kode tersebut menghasilkan visualisasi seperti berikut:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49611937/115358534-f7b0ab80-a1e7-11eb-9348-d36f345e64fe.png" />
+</p>
 
 ## geom_boxplot()
+```
+p9.options.figure_size=(5,5)
+penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KELURAHAN'])[['JUMLAH']].agg('sum').reset_index()
 
+(ggplot(penduduk_luas_kelurahan)
++ aes(x='JUMLAH', y='LUAS WILAYAH (KM2)', color='JUMLAH')
++ geom_point()     
+).draw()
+
+plt.show()
+```
+Kode tersebut menghasilkan visualisasi seperti berikut:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49611937/115358682-1adb5b00-a1e8-11eb-9ebf-503760afb084.png" />
+</p>
 
 ## geom_line()
-
-
-
 sebagaimana dikutip dari laman resmi Bank Indonesia (BI), inflasi adalah diartikan sebagai kenaikan harga barang dan jasa secara umum dan terus menerus dalam jangka waktu tertentu
+```
+p9.options.figure_size=(5,5)
+penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KELURAHAN'])[['JUMLAH']].agg('sum').reset_index()
+
+(ggplot(penduduk_luas_kelurahan)
++ aes(x='JUMLAH', y='LUAS WILAYAH (KM2)', color='JUMLAH')
++ geom_point()     
+).draw()
+
+plt.show()
+```
+Kode tersebut menghasilkan visualisasi seperti berikut:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49611937/115358871-4cecbd00-a1e8-11eb-8135-cec5829b691e.png" />
+</p>
+
+Kode tersebut menghasilkan visualisasi seperti berikut:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49611937/115358917-5b3ad900-a1e8-11eb-9640-e0ab2e493280.png" />
+</p>
+
+
+
 
