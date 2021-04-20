@@ -160,7 +160,8 @@ Kode tersebut menghasilkan visualisasi seperti berikut:
 </p>
 
 ## geom_line()
-sebagaimana dikutip dari laman resmi Bank Indonesia (BI), inflasi adalah diartikan sebagai kenaikan harga barang dan jasa secara umum dan terus menerus dalam jangka waktu tertentu
+geom_line() adalah fungsi yang mempermudah kita membuat line plot. Kita akan menggunakan data Inflasi 8 Negara ASEAN dari tahun 1996 sampai 2019 untuk membuat line plot ini. Selain single line, kita juga bisa membuat multiline plot dengan memanfaatkan geom_line(). Sebelumnya, apa itu inflasi? Oke, berdasarkan laman resmi Bank Indonesia (BI), inflasi adalah kenaikan harga barang dan jasa secara umum dan terus menerus dalam jangka waktu tertentu. Semakin kecil nilai inflasi, maka semakin baik perekonomian sebuah negara, begitupun sebaliknya, nilai inflasi yang besar menunjukkan bahwa keadaan perekonomian sebuah negara sedang tidak baik.
+Mari kita lihat pergerakan inflasi di Indonesia dari tahun ke tahun. Untuk membuat line plot di plotnine, kita bisa menggunakan kode berikut:
 ```
 p9.options.figure_size=(5,5)
 penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KELURAHAN'])[['JUMLAH']].agg('sum').reset_index()
@@ -172,10 +173,13 @@ penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KEL
 
 plt.show()
 ```
-Kode tersebut menghasilkan visualisasi seperti berikut:
+Kode tersebut menghasilkan visualisasi seperti ini:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115358871-4cecbd00-a1e8-11eb-8135-cec5829b691e.png" />
 </p>
+*Dari visualisasi tersebut dapat disimpulkan bahwa*:
+>   - Inflasi melejit secara signifikan di Indonesia pada tahun 1998 dan berangsur-angsur menurun hingga tahun 2019
+
 
 Kode tersebut menghasilkan visualisasi seperti berikut:
 <p align="center">
