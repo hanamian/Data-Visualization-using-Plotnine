@@ -3,7 +3,7 @@ Pada repositori ini digunakan library visualisasi Python yaitu **Plotnine** untu
 
   **Plotnine** adalah package visualisasi data di Python yang mirip dengan ggplot2 milik R. Plotnine ini merupakan turunan matplotlib dengan fungsi-fungsi yang lebih mempermudah pekerjaan kita. Dataset yang dipakai kali ini adalah:
   * [Kependudukan DKI Jakarta](https://storage.googleapis.com/dqlab-dataset/datakependudukandki-dqlab.csv)
-  * [Inflasi](https://storage.googleapis.com/dqlab-dataset/inflasi.csv)
+  * [Inflasi 8 Negara Anggota ASEAN](https://api.worldbank.org/v2/en/indicator/FP.CPI.TOTL.ZG?downloadformat=excel)
  
  
  
@@ -23,7 +23,12 @@ Pada repositori ini digunakan library visualisasi Python yaitu **Plotnine** untu
 ### Melihat data
 Oke, sebelum bisa mengolah data, tentu kita perlu meninjau data yang kita miliki. Berikut adalah data kependudukan DKI 2013 yang berisi kolom: 
 Tahun, Nama provinsi, Nama kabupaten/kota, Nama kecamatan, Nama kelurahan, Luas wilayah (km2), Kepadatan (jiwa/km2), Jenis kelamin, Rentang umur, dan Jumlah  
-![image](https://user-images.githubusercontent.com/49611937/115329482-932c2700-a1bc-11eb-9e45-199a6ea0ce39.png)
+![image](https://user-images.githubusercontent.com/49611937/115339978-0db27200-a1d0-11eb-97a7-8d300b1bc29b.png)
+
+
+Sedangkan untuk data Inflasi yang ada adalah data inflasi tahunan dari 8 negara anggota ASEAN, yaitu Brunei Darussalam, Filipina, Indonesia, Malaysia, Myanmar, Singapura, Thailand, dan Vietnam dari tahun 1996 sampai tahun 2019. Data ini adalah olahan dari sumber yang telah dicantumkan pada link di atas.
+![image](https://user-images.githubusercontent.com/49611937/115339866-d5129880-a1cf-11eb-83d1-d44481ab1c58.png)
+
 
 
 
