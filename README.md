@@ -35,7 +35,9 @@ Sedangkan untuk data Inflasi yang dipakai adalah data inflasi dari 8 negara angg
 
 
 ## geom_col()
-Jika memperhatikan kolom-kolom yang terdapat pada data Kependudukan DKI Jakarta Tahun 2013, kita bisa membuat berbagai visualisasi dari beberapa kolom yang berhubungan. Pada kasus pertama, kita akan melihat jumlah penduduk di setiap kabupaten/kota. Kita bisa menambahkan data jenis kelamin di bagian *fill* fungsi **aes** untuk mengetahui perbandingan jumlah penduduk laki-laki dan jumlah penduduk perempuan di masing-masing kabupaten/kota tersebut. Dalam kasus ini, akan lebih mudah jika kita memakai bar plot atau grafik batang dengan jenis stack, dimana data jumlah penduduk berjenis kelamin laki-laki dan perempuan bertumpuk pada sebuah bar. 
+Jika memperhatikan kolom-kolom yang terdapat pada data Kependudukan DKI Jakarta Tahun 2013, kita bisa membuat berbagai visualisasi dari beberapa kolom yang berhubungan. Pada kasus pertama, kita akan melihat jumlah penduduk di setiap kabupaten/kota. Kita bisa menambahkan data jenis kelamin di bagian *fill* fungsi **aes** untuk mengetahui perbandingan jumlah penduduk laki-laki dan jumlah penduduk perempuan di masing-masing kabupaten/kota tersebut. 
+
+Dalam kasus ini, akan lebih mudah jika kita memakai bar plot atau grafik batang dengan jenis stack, dimana data jumlah penduduk berjenis kelamin laki-laki dan perempuan bertumpuk pada sebuah bar. 
 Seperti yang telah disebutkan sebelumnya, **geom_col()** digunakan untuk membuat bar plot. Contoh implementasinya adalah sebagai berikut:
 ```
 p9.options.figure_size=(8,4)
@@ -60,7 +62,7 @@ Hasil visualisasi:
 >   - Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah lebih dari 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
 >   - Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013
 
-Kita juga bisa memodifikasi grafik untuk melihat komposisi jumlah penduduk dari berbagai rentang umur, yaitu 35-39, 40-44, 45-49, 50-54, 55-59, 60-64, 65-69, 70-74, dan lebih dari 75 tahun. Sayangnya dataset tidak menyediakan data penduduk dengan umur kurang dari 35 tahun, sehingga rasanya kurang lengkap. 
+Kita juga bisa memodifikasi grafik untuk melihat komposisi jumlah penduduk dari berbagai rentang umur, yaitu 35-39, 40-44, 45-49, 50-54, 55-59, 60-64, 65-69, 70-74, dan lebih dari 75 tahun. Sayangnya dataset tidak menyediakan data penduduk dengan umur kurang dari 35 tahun, sehingga rasanya kurang lengkap. Penambahan data rentang umur ini bisa dilakukan dengan menambah parameter *fill* seperti berikut ini:
  ```
 + aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH', fill='RENTANG UMUR') 
 ```
@@ -73,7 +75,7 @@ Hasil visualisasi:
 
 <br/>
 
-Sekarang kita akan membuat grafik jumlah penduduk di setiap kelurahan yang ada di kecamatan PASAR SENEN. Selain itu, kita juga ingin melihat perbandingan jumlah penduduk laki-laki dan perempuannya. Kita bisa menambahkan parameter *position=position_dodge* untuk membuat data jenis kelamin laki-laki dan perempuan terpisah barnya. Grafik ini bisa dibuat dengan kode berikut:
+Sekarang kita akan membuat grafik jumlah penduduk di setiap kelurahan yang ada di kecamatan PASAR SENEN. Selain itu, kita juga ingin melihat perbandingan jumlah penduduk laki-laki dan perempuannya. Kita bisa menambahkan parameter *position=position_dodge* untuk membuat data jenis kelamin laki-laki dan perempuan terpisah barnya. Grafik ini bisa dibuat dengan memodifikasi beberapa bagian kode sebagai berikut:
 ```
 (ggplot(data=data_penduduk[data_penduduk['NAMA KECAMATAN']=='SENEN'])
 + aes(x='NAMA KELURAHAN', y='JUMLAH', fill='JENIS KELAMIN') 
@@ -103,12 +105,13 @@ penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KEL
 
 plt.show()
 ```
-Kode tersebut menghasilkan visualisasi seperti berikut:
+Hasil visualisasi:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115355204-a5ba5680-a1e4-11eb-8fb3-9e7f3831c95f.png" />
 </p>
 
-*Dari visualisasi tersebut dapat disimpulkan bahwa* sebagian besar kelurahan dengan luas wilayah yang lebih sempit memiliki jumlah penduduk lebih sedikit.
+*Dari visualisasi tersebut dapat disimpulkan bahwa*:
+>  Sebagian besar kelurahan dengan luas wilayah yang lebih sempit memiliki jumlah penduduk lebih sedikit.
 
 ## geom_histogram()
 geom_histrogram() ini adalah fungsi untuk membuat histogram plot. Persebaran data akan terlihat dengan jelas jika menggunakan histogram. **stat(count/max(count))** adalah transformasi statistik untuk membuat batasan nilai. Pada kali ini, nilai y yang akan dibatasi agar tidak lebih dari 1.
@@ -132,7 +135,7 @@ Tentu saja, geom_boxplot() digunakan untuk membuat boxplot. Kita hanya perlu men
 ```
 + geom_boxplot()     
 ```
-Kode tersebut menghasilkan visualisasi seperti berikut:
+Hasil visualisasi:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115358682-1adb5b00-a1e8-11eb-9ebf-503760afb084.png" />
 </p>
@@ -161,11 +164,11 @@ Hasil visualisasi:
 </p>
 
 *Dari visualisasi tersebut dapat disimpulkan bahwa*:
->      - Inflasi melejit secara signifikan di Indonesia pada tahun 1998 dan berangsur-angsur menurun hingga tahun 2019
+>      Inflasi melejit secara signifikan di Indonesia pada tahun 1998 dan berangsur-angsur menurun hingga tahun 2019
 
 
 Kita juga ingin melihat dan membandingkan pergerakan inflasi 7 negara anggota ASEAN lain dari tahun ke tahun, apakah lebih baik atau lebih buruk dibandingkan dengan yang terjadi di Indonesia?
-Kita hanya perlu menambahkan parameter *color* untuk membuat multi plot line yang berisi nama-nama 8 negara ASEAN
+Kita hanya perlu menambahkan parameter *color* untuk membuat multi plot line yang berisi nama-nama 8 negara ASEAN.
 ```
 + aes(x='Tahun', y='Inflasi', color='Negara')
 ```
@@ -174,11 +177,12 @@ Hasil visualisasi:
   <img src="https://user-images.githubusercontent.com/49611937/115358917-5b3ad900-a1e8-11eb-9640-e0ab2e493280.png" />
 </p>
 
+
 *Dari visualisasi tersebut dapat disimpulkan bahwa*:
-    - Selain Indonesia, ada negara lain yang mengalami lonjakan inflasi sangat tinggi di tahun 1998, yaitu Myanmar
-    - Myanmar mengalami pundak inflasi tertinggi di tahun 2002
-    - Inflasi tertinggi di tahun 2019 terjadi di Myanmar
-    - Brunei Darussalam adalah negara dengan nilai inflasi terendah dari tahun 1996 hingga 2019 yang pergerakan tiap tahunnya cenderung mendatar 
+>    - Selain Indonesia, ada negara lain yang mengalami lonjakan inflasi sangat tinggi di tahun 1998, yaitu Myanmar
+>    - Myanmar mengalami pundak inflasi tertinggi di tahun 2002
+>    - Inflasi tertinggi di tahun 2019 terjadi di Myanmar
+>    - Brunei Darussalam adalah negara dengan nilai inflasi terendah dari tahun 1996 hingga 2019 yang pergerakan tiap tahunnya cenderung mendatar 
 
 
 
