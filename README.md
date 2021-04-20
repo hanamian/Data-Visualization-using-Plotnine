@@ -101,7 +101,7 @@ Kode tersebut menghasilkan visualisasi seperti berikut:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115351816-d6988c80-a1e0-11eb-80e4-2d16076e4b88.png" />
 </p>
-*Dari visualisasi tersebut dapat disimpulkan bahwa*:
+*Dari visualisasi tersebut dapat disimpulkan bahwa:*
 >   - Kramat adalah kelurahan yang memiliki jumlah penduduk paling banyak di kecamatan SENEN, sedangkan yang paling sedikit penduduknya adalah kelurahan Kenari dan Senen
 >   - Semua kelurahan di kecamatan SENEN memiliki jumlah penduduk laki-laki lebih banyak dibandingkan penduduk perempuan, kecuali kelurahan Senen yang jumlah perempuannya sedikit lebih banyak dari penduduk laki-lakinya  
 
@@ -123,7 +123,7 @@ Kode tersebut menghasilkan visualisasi seperti berikut:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115355204-a5ba5680-a1e4-11eb-8fb3-9e7f3831c95f.png" />
 </p>
-*Dari visualisasi tersebut dapat disimpulkan bahwa*: Sebagian besar kelurahan dengan luas wilayah yang lebih sempit memiliki jumlah penduduk lebih sedikit
+*Dari visualisasi tersebut dapat disimpulkan bahwa* Sebagian besar kelurahan dengan luas wilayah yang lebih sempit memiliki jumlah penduduk lebih sedikit
 
 ## geom_histogram()
 
