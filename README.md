@@ -24,7 +24,7 @@ Pada repositori ini digunakan library visualisasi Python yaitu **Plotnine** untu
 Oke, sebelum bisa mengolah data, tentu kita perlu meninjau data yang kita miliki. Berikut adalah data kependudukan DKI 2013 yang berisi kolom: 
 Tahun, Nama provinsi, Nama kabupaten/kota, Nama kecamatan, Nama kelurahan, Luas wilayah (km2), Kepadatan (jiwa/km2), Jenis kelamin, Rentang umur, dan Jumlah  
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/49611937/115339978-0db27200-a1d0-11eb-97a7-8d300b1bc29b.png" />
+  <img src="https://user-images.githubusercontent.com/49611937/115340390-c678b100-a1d0-11eb-8d14-ea8a86f4f96f.png" />
  </p>
 
 
