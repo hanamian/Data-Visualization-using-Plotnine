@@ -1,5 +1,5 @@
 # Data-Visualization-using-Plotnine
-Pada repositori ini akan digunakan library visualisasi di Python yaitu **Plotnine** untuk merepresentasikan data dalam beberapa bentuk.
+Pada repositori ini digunakan library visualisasi di Python yaitu **Plotnine** untuk merepresentasikan data dalam beberapa bentuk.
 
   **Plotnine** adalah package visualisasi data di Python yang mirip dengan ggplot2 milik R. Plotnine ini dibuat dari matplotlib dengan fungsi-fungsi yang lebih mempermudah pekerjaan kita. Dataset yang dipakai kali ini adalah:
   * Kependudukan DKI Jakarta : https://storage.googleapis.com/dqlab-dataset/datakependudukandki-dqlab.csv
