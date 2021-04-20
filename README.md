@@ -1,10 +1,10 @@
 <h1 align="center">Data-Visualization-using-Plotnine</h1>
 
-Pada repositori ini digunakan library visualisasi Python yaitu **Plotnine** untuk merepresentasikan data dalam beberapa bentuk grafik.
+Repository ini membahas penggunaan **Plotnine** (salah satu library visualisasi Python) untuk merepresentasikan data dalam beberapa bentuk grafik.
 
-  **Plotnine** adalah package visualisasi data di Python yang mirip dengan ggplot2 milik R. Plotnine ini merupakan turunan matplotlib dengan fungsi-fungsi yang lebih mempermudah pekerjaan kita. Dataset yang dipakai kali ini adalah:
-  * [Kependudukan DKI Jakarta Tahun 2013](https://storage.googleapis.com/dqlab-dataset/datakependudukandki-dqlab.csv)
-  * [Inflasi 8 Negara Anggota ASEAN Tahun 1996 - 2019](https://api.worldbank.org/v2/en/indicator/FP.CPI.TOTL.ZG?downloadformat=excel)
+  **Plotnine** adalah package visualisasi data di Python yang mirip dengan *ggplot2* milik R. Plotnine ini merupakan turunan matplotlib dengan fungsi-fungsi yang lebih mempermudah pekerjaan kita. Dataset yang dipakai kali ini adalah:
+  * [Data Kependudukan DKI Jakarta Tahun 2013](https://storage.googleapis.com/dqlab-dataset/datakependudukandki-dqlab.csv)
+  * [Data Inflasi 8 Negara Anggota ASEAN Tahun 1996 - 2019](https://api.worldbank.org/v2/en/indicator/FP.CPI.TOTL.ZG?downloadformat=excel)
  
  
  
@@ -28,7 +28,7 @@ Tahun, Nama provinsi, Nama kabupaten/kota, Nama kecamatan, Nama kelurahan, Luas 
 </p>
 
 
-Sedangkan untuk data Inflasi yang ada adalah data inflasi dari 8 negara anggota ASEAN, yaitu Brunei Darussalam, Filipina, Indonesia, Malaysia, Myanmar, Singapura, Thailand, dan Vietnam dari tahun 1996 sampai tahun 2019. Data ini adalah olahan dari data World Bank yang telah dicantumkan pada link dataset di atas. Dari beberapa kolom, hanya kolom Tahun, Negara, dan Inflasi yang digunakan.
+Sedangkan untuk data Inflasi yang dipakai adalah data inflasi dari 8 negara anggota ASEAN, yaitu Brunei Darussalam, Filipina, Indonesia, Malaysia, Myanmar, Singapura, Thailand, dan Vietnam dari tahun 1996 sampai tahun 2019. Data ini adalah olahan dari data World Bank yang telah dicantumkan pada link dataset di atas. Dari beberapa kolom, hanya kolom Tahun, Negara, dan Inflasi yang digunakan.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115339866-d5129880-a1cf-11eb-83d1-d44481ab1c58.png" />
 </p>
@@ -36,7 +36,7 @@ Sedangkan untuk data Inflasi yang ada adalah data inflasi dari 8 negara anggota 
 
 ## geom_col()
 Jika memperhatikan kolom-kolom yang terdapat pada data Kependudukan DKI Jakarta Tahun 2013, kita bisa membuat berbagai visualisasi dari beberapa kolom yang memiliki hubungan satu sama lain. Yang pertama, kita akan melihat jumlah penduduk di setiap kabupaten atau kota. Kita juga bisa menambahkan data jenis kelamin si bagian *fill* fungsi **aes** untuk mengetahui jumlah penduduk laki-laki jika dibandingkan dengan jumlah penduduk perempuan di masing-masing kabupaten atau kota tersebut. Dalam kasus ini, akan lebih mudah jika kita memakai bar plot atau grafik batang dengan jenis stack, dimana sebuah bar terdiri dari jumlah penduduk berjenis kelamin laki-laki dan perempuan. 
-Seperti yang sudah disebutkan sebelumnya, penggunaan plotnine untuk membuat bar plot adalah menggunakan geom_col() seperti kode berikut:
+Seperti yang sudah disebutkan sebelumnya, penggunaan plotnine untuk membuat bar plot adalah menggunakan **geom_col()** seperti kode berikut:
 ```
 p9.options.figure_size=(8,4)
 
@@ -56,9 +56,9 @@ Kode tersebut akan menghasilkan bar plot seperti yang terlihat di bawah ini.
   <img src="https://user-images.githubusercontent.com/49611937/115344367-836e0c00-a1d7-11eb-8c90-a9a3ad7bc5f1.png" />
 </p>
 
-Dari visualisasi tersebut dapat disimpulkan bahwa:
-   - Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah lebih dari 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
-   - Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013
+*Dari visualisasi tersebut dapat disimpulkan bahwa*:
+>   - Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah lebih dari 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
+>   - Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013
 
 Kita juga bisa memodifikasi grafik untuk melihat komposisi jumlah penduduk dari berbagai rentang umur, yaitu 35-39, 40-44, 45-49, 50-54, 55-59, 60-64, 65-69, 70-74, dan lebih dari 75 tahun. Sayangnya dataset tidak menyediakan data penduduk dengan umur kurang dari 35 tahun. 
  ```
@@ -79,9 +79,59 @@ Kode tersebut menghasilkan visualisasi seperti berikut:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115348252-9a632d00-a1dc-11eb-90ab-8e1d4425e3b8.png" />
 </p>
- Dari visualisasi tersebut dapat disimpulkan bahwa:
-   - Penduduk dengan umur lebih dari 75 thaun jumlahnya paling sedikit di semua kabupaten/kota DKI Jakarta pada tahun 2013
 
+*Dari visualisasi tersebut dapat disimpulkan bahwa* penduduk dengan umur lebih dari 75 tahun jumlahnya paling sedikit di semua kabupaten/kota DKI Jakarta pada tahun 2013
+
+
+Sekarang kita akan membuat grafik jumlah penduduk di setiap kelurahan yang ada di kecamatan PASAR SENEN. Selain itu, kita juga ingin melihat perbandingan jumlah penduduk laki-laki dan perempuannya. Kita bisa menambahkan parameter *position=position_dodge* untuk membuat data jenis kelamin laki-laki dan perempuan terpisah barnya. Grafik ini bisa dibuat dengan kode berikut:
+```
+p9.options.figure_size=(8,8)
+
+(ggplot(data=data_penduduk[data_penduduk['NAMA KECAMATAN']=='SENEN'])
++ aes(x='NAMA KELURAHAN', y='JUMLAH', fill='JENIS KELAMIN') 
++ geom_col(position='position_dodge') 
++ labs(title='Jumlah Penduduk DKI Jakarta di Kecamatan Senen Tahun 2013',   
+       x='Nama Kelurahan',
+       y='Jumlah Penduduk')
+).draw()
+
+plt.show()
+```
+Kode tersebut menghasilkan visualisasi seperti berikut:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49611937/115351816-d6988c80-a1e0-11eb-80e4-2d16076e4b88.png" />
+</p>
+*Dari visualisasi tersebut dapat disimpulkan bahwa*:
+>   - Kramat adalah kelurahan yang memiliki jumlah penduduk paling banyak di kecamatan SENEN, sedangkan yang paling sedikit penduduknya adalah kelurahan Kenari dan Senen
+>   - Semua kelurahan di kecamatan SENEN memiliki jumlah penduduk laki-laki lebih banyak dibandingkan penduduk perempuan, kecuali kelurahan Senen yang jumlah perempuannya sedikit lebih banyak dari penduduk laki-lakinya  
+
+
+## geom_point()
+Fungsi geom_point() mempermudah kita membuat scatter plot. Contohnya jika kita ingin melihat hubungan dan sebaran jumlah penduduk terhadap luas wilayah. Wilayah yang akan kita pakai adalah wilayah kelurahan, sehingga kita perlu menggabungkan dan menjumlahkan data luas wilayah perkelurahan terlebih dahulu.
+```
+p9.options.figure_size=(5,5)
+penduduk_luas_kelurahan = data_penduduk.groupby(['LUAS WILAYAH (KM2)', 'NAMA KELURAHAN'])[['JUMLAH']].agg('sum').reset_index()
+
+(ggplot(penduduk_luas_kelurahan)
++ aes(x='JUMLAH', y='LUAS WILAYAH (KM2)', color='JUMLAH')
++ geom_point()     
+).draw()
+
+plt.show()
+```
+Kode tersebut menghasilkan visualisasi seperti berikut:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49611937/115355204-a5ba5680-a1e4-11eb-8fb3-9e7f3831c95f.png" />
+</p>
+*Dari visualisasi tersebut dapat disimpulkan bahwa*: Sebagian besar kelurahan dengan luas wilayah yang lebih sempit memiliki jumlah penduduk lebih sedikit
+
+## geom_histogram()
+
+
+## geom_boxplot()
+
+
+## geom_line()
 
 
 
