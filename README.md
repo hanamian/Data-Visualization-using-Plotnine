@@ -35,7 +35,7 @@ Sedangkan untuk data Inflasi yang ada adalah data inflasi dari 8 negara anggota 
 
 
 ## geom_col()
-Jika memperhatikan kolom-kolom yang terdapat pada data Kependudukan DKI Jakarta Tahun 2013, kita bisa membuat berbagai visualisasi dari beberapa kolom yang memiliki hubungan satu sama lain. Yang pertama, kita akan melihat jumlah penduduk di setiap kabupaten atau kota. Kita juga bisa menambahkan data jenis kelamin untuk mengetahui jumlah penduduk laki-laki jika dibandingkan dengan jumlah penduduk perempuan di masing-masing kabupaten atau kota tersebut. Dalam kasus ini, akan lebih mudah jika kita memakai bar plot atau grafik batang dengan jenis stack, dimana sebuah bar terdiri dari jumlah penduduk berjenis kelamin laki-laki dan perempuan. 
+Jika memperhatikan kolom-kolom yang terdapat pada data Kependudukan DKI Jakarta Tahun 2013, kita bisa membuat berbagai visualisasi dari beberapa kolom yang memiliki hubungan satu sama lain. Yang pertama, kita akan melihat jumlah penduduk di setiap kabupaten atau kota. Kita juga bisa menambahkan data jenis kelamin si bagian *fill* fungsi **aes** untuk mengetahui jumlah penduduk laki-laki jika dibandingkan dengan jumlah penduduk perempuan di masing-masing kabupaten atau kota tersebut. Dalam kasus ini, akan lebih mudah jika kita memakai bar plot atau grafik batang dengan jenis stack, dimana sebuah bar terdiri dari jumlah penduduk berjenis kelamin laki-laki dan perempuan. 
 Seperti yang sudah disebutkan sebelumnya, penggunaan plotnine untuk membuat bar plot adalah menggunakan geom_col() seperti kode berikut:
 ```
 p9.options.figure_size=(8,4)
@@ -55,14 +55,33 @@ Kode tersebut akan menghasilkan bar plot seperti yang terlihat di bawah ini.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115344367-836e0c00-a1d7-11eb-8c90-a9a3ad7bc5f1.png" />
 </p>
+
 Dari visualisasi tersebut dapat disimpulkan bahwa:
-* Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah lebih dari 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
-* Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013<br/>
+   - Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah lebih dari 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
+   - Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013
 
+Kita juga bisa memodifikasi grafik untuk melihat komposisi jumlah penduduk dari berbagai rentang umur, yaitu 35-39, 40-44, 45-49, 50-54, 55-59, 60-64, 65-69, 70-74, dan lebih dari 75 tahun. Sayangnya dataset tidak menyediakan data penduduk dengan umur kurang dari 35 tahun. 
+ ```
+ p9.options.figure_size=(8,4)
 
+(ggplot(data=data_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH', fill='RENTANG UMUR') 
++ geom_col()
++ coord_flip()
++ labs(title='Jumlah Penduduk DKI Jakarta per Kabupaten/Kota Tahun 2013',   
+       x='Kabupaten/Kota',
+       y='Jumlah Penduduk')
+).draw()
+
+plt.show()
+```
+Kode tersebut menghasilkan visualisasi seperti berikut:
 <p align="center">
-  <img src:"https://user-images.githubusercontent.com/49611937/115348252-9a632d00-a1dc-11eb-90ab-8e1d4425e3b8.png" />
+  <img src="https://user-images.githubusercontent.com/49611937/115348252-9a632d00-a1dc-11eb-90ab-8e1d4425e3b8.png" />
 </p>
+ Dari visualisasi tersebut dapat disimpulkan bahwa:
+   - Penduduk dengan umur lebih dari 75 thaun jumlahnya paling sedikit di semua kabupaten/kota DKI Jakarta pada tahun 2013
+
 
 
 
