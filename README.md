@@ -3,8 +3,8 @@
 Pada repositori ini digunakan library visualisasi Python yaitu **Plotnine** untuk merepresentasikan data dalam beberapa bentuk grafik.
 
   **Plotnine** adalah package visualisasi data di Python yang mirip dengan ggplot2 milik R. Plotnine ini merupakan turunan matplotlib dengan fungsi-fungsi yang lebih mempermudah pekerjaan kita. Dataset yang dipakai kali ini adalah:
-  * [Kependudukan DKI Jakarta](https://storage.googleapis.com/dqlab-dataset/datakependudukandki-dqlab.csv)
-  * [Inflasi 8 Negara Anggota ASEAN](https://api.worldbank.org/v2/en/indicator/FP.CPI.TOTL.ZG?downloadformat=excel)
+  * [Kependudukan DKI Jakarta Tahun 2013](https://storage.googleapis.com/dqlab-dataset/datakependudukandki-dqlab.csv)
+  * [Inflasi 8 Negara Anggota ASEAN Tahun 1996 - 2019](https://api.worldbank.org/v2/en/indicator/FP.CPI.TOTL.ZG?downloadformat=excel)
  
  
  
@@ -25,7 +25,7 @@ Oke, sebelum bisa mengolah data, tentu kita perlu meninjau data yang kita miliki
 Tahun, Nama provinsi, Nama kabupaten/kota, Nama kecamatan, Nama kelurahan, Luas wilayah (km2), Kepadatan (jiwa/km2), Jenis kelamin, Rentang umur, dan Jumlah  
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115340390-c678b100-a1d0-11eb-8d14-ea8a86f4f96f.png" />
- </p>
+</p>
 
 
 Sedangkan untuk data Inflasi yang ada adalah data inflasi dari 8 negara anggota ASEAN, yaitu Brunei Darussalam, Filipina, Indonesia, Malaysia, Myanmar, Singapura, Thailand, dan Vietnam dari tahun 1996 sampai tahun 2019. Data ini adalah olahan dari data World Bank yang telah dicantumkan pada link dataset di atas. Dari beberapa kolom, hanya kolom Tahun, Negara, dan Inflasi yang digunakan.
@@ -51,13 +51,20 @@ p9.options.figure_size=(8,4)
 
 plt.show()
 ```
-Kode tersebut akan menghasilkan grafik batang seperti yang terlihat di bawah ini.  
+Kode tersebut akan menghasilkan bar plot seperti yang terlihat di bawah ini.  
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49611937/115344367-836e0c00-a1d7-11eb-8c90-a9a3ad7bc5f1.png" />
 </p>
-Dari grafik tersebut dapat disimpulkan bahwa:
-1. Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah > 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
-2. Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013
+Dari visualisasi tersebut dapat disimpulkan bahwa:
+* Jakarta Barat adalah kota di DKI Jakarta yang menyumbangkan jumlah penduduk terbanyak di tahun 2013 dengan jumlah lebih dari 2.000.000 penduduk, sedangkan yang paling sedikit penduduknya adalah dari Kabupaten Adm. Kepulauan Seribu
+* Jumlah penduduk laki-laki dan penduduk perempuan memiliki rasio yang seimbang di setiap kabupaten atau kota di DKI Jakarta tahun 2013<br/>
 
 
+<p align="center">
+  <img src:"https://user-images.githubusercontent.com/49611937/115348252-9a632d00-a1dc-11eb-90ab-8e1d4425e3b8.png" />
+</p>
+
+
+
+sebagaimana dikutip dari laman resmi Bank Indonesia (BI), inflasi adalah diartikan sebagai kenaikan harga barang dan jasa secara umum dan terus menerus dalam jangka waktu tertentu
 
